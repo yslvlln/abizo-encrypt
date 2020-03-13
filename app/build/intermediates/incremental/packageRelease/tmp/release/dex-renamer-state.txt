@@ -1,0 +1,4 @@
+#Fri Mar 13 16:50:49 PST 2020
+base.0=/home/yco/IdeaProjects/abizo-encrpyt/app/build/intermediates/dex/release/mergeDexRelease/out/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
