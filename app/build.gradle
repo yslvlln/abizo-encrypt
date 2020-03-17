@@ -9,6 +9,10 @@ repositories {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 
+def apikeyPropertiesFile = rootProject.file("apikey.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -18,6 +22,8 @@ android {
         versionCode 1
         versionName '1.0'
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+        buildConfigField("String", "SALT", apikeyProperties['SALT'])
+        buildConfigField("String", "AES_KEY", apikeyProperties['AES_KEY'])
     }
     buildTypes {
         release {
